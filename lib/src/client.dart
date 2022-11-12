@@ -214,7 +214,7 @@ class Client {
   /// Determines whether the server's response is valid per the spec.
   bool _isResponseValid(response) {
     if (response is! Map) return false;
-    if (response['jsonrpc'] != '2.0') return false;
+    // if (response['jsonrpc'] != '2.0') return false;
     var id = response['id'];
     id = (id is String) ? int.parse(id) : id;
     if (!_pendingRequests.containsKey(id)) return false;
